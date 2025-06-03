@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 
-const mine = "*.....\n......\n.*...."
+const mine = ".*.**.\n....*.\n..*..."
 
 function grille(numero: number){
 
@@ -70,7 +70,7 @@ function grille(numero: number){
                 compterB += 1;
             }
             //haut vide
-            if(mine_adjust[numero - 6] === "." ){
+            if(mine_adjust[numero - 6] === "." || mine_adjust[numero - 6] === undefined){
                 compterH += 1;
             }
             //bas bombe
@@ -117,7 +117,7 @@ function grille(numero: number){
 
             
             
-            compterPerso = compterB + compterH + compterD + compterG + compterBD + compterBG + compterHD + compterHG;;
+            compterPerso = compterB + compterH + compterD + compterG + compterBD + compterBG + compterHD + compterHG;
         }
         
     return compterPerso;
@@ -236,10 +236,43 @@ Deno.test("test case haut bombe, BD bombe, gauche vide", () => {
 
 
 
+function minesweeper(){
+    let mine_adjust2 = "";
+
+    for (let x = 0; x < mine.length; x++){
+    
+        if ( mine[x] === "."){
+            mine_adjust2+=".";
+        }
+        if ( mine[x] === "*"){
+            mine_adjust2+="*";
+        }
+        
+    }
+
+    let MinesweeperCHAINE = "";
 
 
+    for (let i = 0; i < mine_adjust2.length; i++){
+        let box = grille(i);
+
+        if (MinesweeperCHAINE.length%7===0){
+            MinesweeperCHAINE += "\n"
+        }
+        if (box !== -2){
+        MinesweeperCHAINE += box;
+        }
+        else{
+            MinesweeperCHAINE += "*"
+        }
+
+    }
+
+    console.log(MinesweeperCHAINE);
+}
 
 
+minesweeper();
 
 
 
