@@ -14,15 +14,15 @@ function grille(numero: number){
     let compterBG = -1;
     let compter = compterB + compterH + compterD + compterG + compterBD + compterBG + compterHD + compterHG;
     let compterPerso;
-    let bombe;
+    let bombe = -2;
     
 
     //Detection de mine 0;
 
-        /*if(mine[numero] === "*"){
+        if(mine[numero] === "*"){
 
-            grille[numero] = "*";
-        }*/
+            return bombe;
+        }
 
             
         if(mine[numero] === "."){
