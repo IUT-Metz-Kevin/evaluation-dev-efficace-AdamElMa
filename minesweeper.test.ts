@@ -121,7 +121,7 @@ function grille(numero: number){
 
             
             
-            compterPerso = compterG;
+            compterPerso = compterD;
         }
         
     return compterPerso;
@@ -216,6 +216,11 @@ Deno.test("test case bombe BG B BD", () => {
 Deno.test("test case gauche vide", () => {
   
   assertEquals(grille(0), 0);
+});
+
+Deno.test("test case droite vide", () => {
+  
+  assertEquals(grille(17), 0);
 });
 
 
