@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 
-const mine = "*.....\n......"
+const mine = "*.....\n......\n*....."
 
 function grille(numero: number){
 
@@ -82,7 +82,7 @@ function grille(numero: number){
 
             
             
-            compterPerso = compterH;
+            compterPerso = compterH + compterB;
         }
         
     return compterPerso;
@@ -136,8 +136,10 @@ Deno.test("test case bombe en bas", () => {
 
 Deno.test("test case bombe en haut", () => {
   
-  assertEquals(grille(6), 1);
+  assertEquals(grille(6), 2);
 });
+
+
 
 
 
