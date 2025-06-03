@@ -22,6 +22,9 @@ function grille(numero: number){
                 compter += 1;
             }
 
+            if (mine[numero + 1] === "*"){
+                compter += 2;
+            }
 
 
         }
