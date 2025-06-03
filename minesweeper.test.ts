@@ -1,8 +1,27 @@
 import { assertEquals } from "jsr:@std/assert";
 
-const mine = "*.*..."
+const mine = "......\n*....."
+
 function grille(numero: number){
 
+    console.log("Longueur obligatoire de ligne : 6 ! \n");
+
+    let mine_adjust = "";
+
+    for (let x = 0; x < mine.length; x++){
+    
+        if ( mine[x] === "."){
+            mine_adjust+=".";
+        }
+        if ( mine[x] === "*"){
+            mine_adjust+="*";
+        }
+        
+    }
+
+    console.log(mine_adjust);
+
+    
     //let grille : Array<string| number> = [];
     let compterD = -1;
     let compterG = -1;
@@ -19,29 +38,29 @@ function grille(numero: number){
 
     //Detection de mine 0;
 
-        if(mine[numero] === "*"){
+        if(mine_adjust[numero] === "*"){
 
             return bombe;
         }
 
             
-        if(mine[numero] === "."){
+        if(mine_adjust[numero] === "."){
 
              
             
-            if (mine[numero + 1] === "."){
+            if (mine_adjust[numero + 1] === "."){
                 compterD += 1;
             }
 
-            if (mine[numero + 1] === "*"){
+            if (mine_adjust[numero + 1] === "*"){
                 compterD += 2;
             }
 
-            if (mine[numero - 1] === "."){
+            if (mine_adjust[numero - 1] === "."){
                 compterG += 1;
             }
 
-            if (mine[numero - 1] === "*"){
+            if (mine_adjust[numero - 1] === "*"){
                 compterG += 2;
             }
 
@@ -82,3 +101,13 @@ Deno.test("test case bombe", () => {
   
   assertEquals(grille(0), -2);
 });
+
+Deno.test("test case vide en bas", () => {
+  
+  assertEquals(grille(0), 0);
+});
+
+
+
+
+grille(5);
