@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 
-const mine = "......\n......"
+const mine = "......\n*....."
 
 function grille(numero: number){
 
@@ -71,10 +71,14 @@ function grille(numero: number){
                 compterH += 1;
             }
 
+            if(mine_adjust[numero + 6] === "*"){
+                compterB += 2;
+            }
+
 
             
             
-            compterPerso = compterH;
+            compterPerso = compterB;
         }
         
     return compterPerso;
