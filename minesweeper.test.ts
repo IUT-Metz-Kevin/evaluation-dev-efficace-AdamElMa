@@ -29,10 +29,8 @@ function grille(numero: number){
                 compterD += 1;
             }
 
-            /*
-            if (mine[numero + 1] === "*"){
-                compter += 2;
-            }*/
+            
+            
             
 
         }
@@ -45,10 +43,10 @@ Deno.test("test case vide droite", () => {
   assertEquals(grille(0), 0);
 });
 
-/*Deno.test("test case bombe droite", () => {
+Deno.test("test case bombe droite", () => {
   
   assertEquals(grille(0), 1);
-});*/
+});
 
 /*Deno.test("test case vide droite et gauche", () => {
   
