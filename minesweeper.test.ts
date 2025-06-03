@@ -24,19 +24,20 @@ function grille(numero: number){
         if(mine[numero] === "."){
 
              
-            /*
+            
             if (mine[numero + 1] === "."){
                 compterD += 1;
             }
 
+            /*
             if (mine[numero + 1] === "*"){
                 compter += 2;
-            }
-            */
+            }*/
+            
 
         }
         
-    return compter;
+    return compterD;
 }
 
 Deno.test("test case vide droite", () => {
