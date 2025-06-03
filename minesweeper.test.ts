@@ -95,12 +95,17 @@ function grille(numero: number){
                 compterHG += 1;
             }
             //BG vide
-            if(mine_adjust[numero - 7] === "."){
+            if(mine_adjust[numero + 5] === "."){
                 compterBG += 1;
             }
             //BD vide
-            if(mine_adjust[numero - 7] === "."){
+            if(mine_adjust[numero + 7] === "."){
                 compterBD += 1;
+            }
+
+            //BG bombe
+            if(mine_adjust[numero + 5] === "*"){
+                compterBG += 2;
             }
 
             
