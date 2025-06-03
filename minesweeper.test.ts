@@ -121,6 +121,12 @@ Deno.test("test case vide en haut", () => {
   assertEquals(grille(6), 0);
 });
 
+Deno.test("test case bombe en bas", () => {
+  
+  assertEquals(grille(0), 1);
+});
+
+
 
 
 
