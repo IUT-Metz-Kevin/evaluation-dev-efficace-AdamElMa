@@ -87,6 +87,8 @@ function grille(numero: number){
                 compterHG += 2;
             }
 
+            
+
 
             
             
@@ -156,6 +158,12 @@ Deno.test("test case bombe en haut gauche", () => {
   
   assertEquals(grille(13), 1);
 });
+
+Deno.test("test case vide H HG HD", () => {
+  
+  assertEquals(grille(13), 0);
+});
+
 
 
 
