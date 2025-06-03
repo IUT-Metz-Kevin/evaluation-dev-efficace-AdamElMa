@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 
-const mine = "......\n......\n***..."
+const mine = "*.....\n......\n.*...."
 
 function grille(numero: number){
 
@@ -30,7 +30,6 @@ function grille(numero: number){
     let compterHG = -1;
     let compterBD = -1;
     let compterBG = -1;
-    let compter = compterB + compterH + compterD + compterG + compterBD + compterBG + compterHD + compterHG;
     let compterPerso;
     let bombe = -2;
     
@@ -71,7 +70,7 @@ function grille(numero: number){
                 compterB += 1;
             }
             //haut vide
-            if(mine_adjust[numero - 6] === "."){
+            if(mine_adjust[numero - 6] === "." ){
                 compterH += 1;
             }
             //bas bombe
@@ -91,19 +90,19 @@ function grille(numero: number){
                 compterHG += 2;
             }
             //HD vide
-            if(mine_adjust[numero - 5] === "."){
-                compterHG += 1;
+            if(mine_adjust[numero - 5] === "." || mine_adjust[numero - 5] === undefined){
+                compterHD += 1;
             }
             //HG vide
-            if(mine_adjust[numero - 7] === "."){
+            if(mine_adjust[numero - 7] === "." || mine_adjust[numero - 7] === undefined){
                 compterHG += 1;
             }
             //BG vide
-            if(mine_adjust[numero + 5] === "."){
+            if(mine_adjust[numero + 5] === "." || mine_adjust[numero + 5] === undefined){
                 compterBG += 1;
             }
             //BD vide
-            if(mine_adjust[numero + 7] === "."){
+            if(mine_adjust[numero + 7] === "." || mine_adjust[numero + 7] === undefined){
                 compterBD += 1;
             }
 
@@ -117,11 +116,8 @@ function grille(numero: number){
             }
 
             
-
-
             
-            
-            compterPerso = compterB;
+            compterPerso = compterB + compterH + compterD + compterG + compterBD + compterBG + compterHD + compterHG;;
         }
         
     return compterPerso;
@@ -231,6 +227,11 @@ Deno.test("test case haute vide", () => {
 Deno.test("test case bas vide", () => {
   
   assertEquals(grille(17), 0);
+});
+
+Deno.test("test case haut bombe, BD bombe, gauche vide", () => {
+  
+  assertEquals(grille(6), 2);
 });
 
 
