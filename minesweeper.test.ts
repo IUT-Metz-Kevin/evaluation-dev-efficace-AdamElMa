@@ -67,10 +67,12 @@ function grille(numero: number){
                 compterB += 1;
             }
 
+            
+
 
             
             
-            compterPerso = compterB;
+            compterPerso = compterH;
         }
         
     return compterPerso;
@@ -112,6 +114,12 @@ Deno.test("test case vide en bas", () => {
 });
 
 
+Deno.test("test case vide en haut", () => {
+  
+  assertEquals(grille(6), 0);
+});
 
 
-grille(0+6);
+
+
+
