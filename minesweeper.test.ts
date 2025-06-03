@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 
-const mine = "......"
+const mine = ".*...."
 function grille(numero: number){
 
     //let grille : Array<string| number> = [];
@@ -30,7 +30,9 @@ function grille(numero: number){
             }
 
             
-            
+            if (mine[numero + 1] === "*"){
+                compterD += 2;
+            }
             
 
         }
