@@ -14,7 +14,7 @@ function grille(numero: number){
         }*/
 
             
-        /*if(mine[numero] === "."){
+        if(mine[numero] === "."){
 
              
 
@@ -24,7 +24,7 @@ function grille(numero: number){
 
 
         }
-        */
+        
     return compter;
 }
 
