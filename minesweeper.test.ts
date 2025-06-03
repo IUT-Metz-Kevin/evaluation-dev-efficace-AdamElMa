@@ -51,7 +51,7 @@ function grille(numero: number){
 
              
             //droite vide
-            if (mine_adjust[numero + 1] === "."){
+            if (mine_adjust[numero + 1] === "." || mine_adjust[numero + 1] === undefined){
                 compterD += 1;
             }
             //droite bombe
