@@ -61,3 +61,8 @@ Deno.test("test case vide droite et gauche", () => {
   
   assertEquals(grille(1), 0);
 });
+
+Deno.test("test case vide droite et case gauche bombe FALSE", () => {
+  
+  assertEquals(grille(1), 1);
+});
