@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 
-const mine = "......\n*....."
+const mine = "......\n......"
 
 function grille(numero: number){
 
@@ -20,7 +20,6 @@ function grille(numero: number){
     }
 
     console.log(mine_adjust);
-
     
     //let grille : Array<string| number> = [];
     let compterD = -1;
@@ -64,9 +63,14 @@ function grille(numero: number){
                 compterG += 2;
             }
 
+            if(mine_adjust[numero + 6] === "."){
+                compterB += 1;
+            }
+
+
             
             
-            compterPerso = compterD + compterG;
+            compterPerso = compterB;
         }
         
     return compterPerso;
@@ -110,4 +114,4 @@ Deno.test("test case vide en bas", () => {
 
 
 
-grille(5);
+grille(0+6);
