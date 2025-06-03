@@ -66,19 +66,19 @@ function grille(numero: number){
             if (mine_adjust[numero - 1] === "*"){
                 compterG += 2;
             }
-            //haut vide
-            if(mine_adjust[numero + 6] === "."){
+            //bas vide
+            if(mine_adjust[numero + 6] === "." || mine_adjust[numero + 6] === undefined){
                 compterB += 1;
             }
-            //bas vide
+            //haut vide
             if(mine_adjust[numero - 6] === "."){
                 compterH += 1;
             }
-            //haut bombe
+            //bas bombe
             if(mine_adjust[numero + 6] === "*"){
                 compterB += 2;
             }
-            //bas bombe
+            //haut bombe
             if(mine_adjust[numero - 6] === "*"){
                 compterH += 2;
             }
@@ -121,7 +121,7 @@ function grille(numero: number){
 
             
             
-            compterPerso = compterH;
+            compterPerso = compterB;
         }
         
     return compterPerso;
@@ -227,6 +227,7 @@ Deno.test("test case haute vide", () => {
   
   assertEquals(grille(0), 0);
 });
+
 
 
 
