@@ -39,6 +39,12 @@ function grille(numero: number){
             if (mine[numero - 1] === "."){
                 compterG += 1;
             }
+
+            if (mine[numero - 1] === "*"){
+                compterG += 2;
+            }
+
+            
             
             compterPerso = compterD + compterG;
         }
