@@ -172,6 +172,11 @@ Deno.test("test case vide H HG HD", () => {
   assertEquals(grille(13), 0);
 });
 
+Deno.test("test case vide B BG BD", () => {
+  
+  assertEquals(grille(6), 0);
+});
+
 
 
 
