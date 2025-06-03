@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 
-const mine = "......"
+const mine = "..*..."
 function grille(numero: number){
 
     //let grille : Array<string| number> = [];
@@ -32,7 +32,6 @@ function grille(numero: number){
                 compterD += 1;
             }
 
-            
             if (mine[numero + 1] === "*"){
                 compterD += 2;
             }
@@ -62,7 +61,12 @@ Deno.test("test case vide droite et gauche", () => {
   assertEquals(grille(1), 0);
 });
 
-Deno.test("test case vide droite et case gauche bombe FALSE", () => {
+Deno.test("test case vide gauche et case bombe droite", () => {
   
   assertEquals(grille(1), 1);
+});
+
+Deno.test("test case bombe gauche et droite", () => {
+  
+  assertEquals(grille(1), 2);
 });
