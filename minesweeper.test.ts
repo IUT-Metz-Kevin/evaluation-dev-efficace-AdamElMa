@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 
-const mine = "......\n*.....\n......"
+const mine = "......\n......\n......"
 
 function grille(numero: number){
 
@@ -46,45 +46,53 @@ function grille(numero: number){
         if(mine_adjust[numero] === "."){
 
              
-            
+            //droite vide
             if (mine_adjust[numero + 1] === "."){
                 compterD += 1;
             }
-
+            //droite bombe
             if (mine_adjust[numero + 1] === "*"){
                 compterD += 2;
             }
-
+            //gauche vide
             if (mine_adjust[numero - 1] === "."){
                 compterG += 1;
             }
-
+            //gauche bobme
             if (mine_adjust[numero - 1] === "*"){
                 compterG += 2;
             }
-
+            //haut vide
             if(mine_adjust[numero + 6] === "."){
                 compterB += 1;
             }
-
+            //bas vide
             if(mine_adjust[numero - 6] === "."){
                 compterH += 1;
             }
-
+            //haut bombe
             if(mine_adjust[numero + 6] === "*"){
                 compterB += 2;
             }
-
+            //bas bombe
             if(mine_adjust[numero - 6] === "*"){
                 compterH += 2;
             }
-
+            //HD bombe
             if(mine_adjust[numero - 5] === "*"){
                 compterHD += 2;
             }
-
+            //HG bombe
             if(mine_adjust[numero - 7] === "*"){
                 compterHG += 2;
+            }
+            //HD vide
+            if(mine_adjust[numero - 5] === "."){
+                compterHG += 1;
+            }
+            //HG vide
+            if(mine_adjust[numero - 7] === "."){
+                compterHG += 1;
             }
 
             
@@ -92,7 +100,7 @@ function grille(numero: number){
 
             
             
-            compterPerso = compterHG;
+            compterPerso = compterHG + compterHD + compterH;
         }
         
     return compterPerso;
