@@ -36,5 +36,5 @@ Deno.test("test case vide droite", () => {
 
 Deno.test("test case bombe droite", () => {
   
-  assertEquals(grille(0), 0);
+  assertEquals(grille(0), 1);
 });
