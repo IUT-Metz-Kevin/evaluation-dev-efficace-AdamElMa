@@ -107,13 +107,17 @@ function grille(numero: number){
             if(mine_adjust[numero + 5] === "*"){
                 compterBG += 2;
             }
+            //BD bombe
+            if(mine_adjust[numero + 7] === "*"){
+                compterBD += 2;
+            }
 
             
 
 
             
             
-            compterPerso = compterBG;
+            compterPerso = compterBD;
         }
         
     return compterPerso;
