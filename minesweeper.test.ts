@@ -67,7 +67,9 @@ function grille(numero: number){
                 compterB += 1;
             }
 
-            
+            if(mine_adjust[numero - 6] === "."){
+                compterH += 1;
+            }
 
 
             
