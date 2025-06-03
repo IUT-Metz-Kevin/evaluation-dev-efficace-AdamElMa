@@ -79,10 +79,14 @@ function grille(numero: number){
                 compterH += 2;
             }
 
+            if(mine_adjust[numero - 5] === "*"){
+                compterHD += 2;
+            }
+
 
             
             
-            compterPerso = compterH + compterB;
+            compterPerso = compterHD;
         }
         
     return compterPerso;
