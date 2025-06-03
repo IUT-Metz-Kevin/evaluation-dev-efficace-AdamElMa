@@ -37,6 +37,9 @@ function grille(numero: number){
                 compterD += 2;
             }
 
+            if (mine[numero - 1] === "."){
+                compterG += 1;
+            }
             
             compterPerso = compterD + compterG;
         }
@@ -56,5 +59,5 @@ Deno.test("test case bombe droite", () => {
 
 Deno.test("test case vide droite et gauche", () => {
   
-  assertEquals(grille(0), 0);
+  assertEquals(grille(1), 0);
 });
