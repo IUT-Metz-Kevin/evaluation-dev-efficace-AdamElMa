@@ -34,6 +34,10 @@ function grille(numero: number){
     let compterPerso;
     let bombe = -2;
     
+    console.log(mine_adjust[numero-1]);
+
+
+
 
     //Detection de mine 0;
 
@@ -117,7 +121,7 @@ function grille(numero: number){
 
             
             
-            compterPerso = compterBD + compterB + compterBD;
+            compterPerso = compterG;
         }
         
     return compterPerso;
@@ -209,7 +213,10 @@ Deno.test("test case bombe BG B BD", () => {
   assertEquals(grille(7), 3);
 });
 
-
+Deno.test("test case gauche vide", () => {
+  
+  assertEquals(grille(0), 0);
+});
 
 
 
