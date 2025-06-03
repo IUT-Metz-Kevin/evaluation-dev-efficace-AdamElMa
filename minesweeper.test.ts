@@ -94,13 +94,21 @@ function grille(numero: number){
             if(mine_adjust[numero - 7] === "."){
                 compterHG += 1;
             }
+            //BG vide
+            if(mine_adjust[numero - 7] === "."){
+                compterBG += 1;
+            }
+            //BD vide
+            if(mine_adjust[numero - 7] === "."){
+                compterBD += 1;
+            }
 
             
 
 
             
             
-            compterPerso = compterHG + compterHD + compterH;
+            compterPerso = compterBG + compterBD + compterB;
         }
         
     return compterPerso;
@@ -174,7 +182,7 @@ Deno.test("test case vide H HG HD", () => {
 
 Deno.test("test case vide B BG BD", () => {
   
-  assertEquals(grille(6), 0);
+  assertEquals(grille(7), 0);
 });
 
 
