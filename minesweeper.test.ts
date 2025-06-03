@@ -59,7 +59,7 @@ function grille(numero: number){
                 compterD += 2;
             }
             //gauche vide
-            if (mine_adjust[numero - 1] === "."){
+            if (mine_adjust[numero - 1] === "."  || mine_adjust[numero - 1] === undefined){
                 compterG += 1;
             }
             //gauche bobme
